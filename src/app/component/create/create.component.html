@@ -1,0 +1,48 @@
+<div class="container">
+    <h2>{{title}}</h2>
+    <div class="message success" *ngIf="status == 'success'">
+        this project was created success. <a href="#">view here</a>
+    </div>
+    <div class="message failed" *ngIf="status == 'failed'">
+        this project was not created
+    </div>
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <p>
+            <label for="name">Name</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required>
+            <span class="form-error" *ngIf="name.touched && !name.valid">
+                Name is requerided
+            </span>
+        </p>
+        <p>
+            <label for="description">Description</label>
+            <textarea name="description" #description="ngModel" [(ngModel)]="project.description" required></textarea>
+            <span class="form-error" *ngIf="description.touched && !description.valid">
+                Description is requerided
+            </span>
+        </p>
+        <p>
+            <label for="category">Category</label>
+            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required>
+            <span class="form-error" *ngIf="category.touched && !category.valid">
+                Category is requerided
+            </span>
+        </p>
+        <p>
+            <label for="year">Year</label>
+            <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" required>
+        </p>
+        <p>
+            <label for="lang">Language</label>
+            <input type="text" name="lang" #lang="ngModel" [(ngModel)]="project.lang" required>
+            <span class="form-error" *ngIf="lang.touched && !lang.valid">
+                Lang is requerided
+            </span>
+        </p>
+        <p>
+            <label for="lang">Image</label>
+            <input type="file" name="image" placeholder="upload image">
+        </p>
+        <input type="submit" value="Send" [disabled]="!projectForm.form.valid">
+    </form>
+</div>

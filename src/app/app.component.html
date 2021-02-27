@@ -1,0 +1,17 @@
+<header>
+  <ul>
+    <li><a [routerLink]="['/about']" [routerLinkActive] = "['actived']">about</a></li>
+    <li><a [routerLink]="['/project']"[routerLinkActive] = "['actived']">project</a></li>
+    <li id="logo"><a href="#">LG</a></li>
+    <li><a [routerLink]="['/create-project']" [routerLinkActive] = "['actived']">create</a></li>
+    <li><a [routerLink]="['/contact']" [routerLinkActive] = "['actived']">contact</a></li> 
+  </ul>
+</header>
+
+<section id="content">
+  <router-outlet></router-outlet>
+</section>
+
+<footer>
+    portfolio - footer &copy
+</footer>
