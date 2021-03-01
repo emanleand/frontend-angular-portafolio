@@ -1,7 +1,12 @@
-<div class="container">
+<div class="container" *ngIf="project">
     <h2>{{title}}</h2>
     <div class="message success" *ngIf="status == 'success'">
-        this project was created success. <a href="#">view here</a>
+        <div *ngIf="!project._id; else edit">
+            this project was created success. <a [routerLink]="['/project']" >view here</a>
+        </div>
+        <ng-template #edit>
+            this project was created success. <a [routerLink]="['/project', project._id]" >view here</a>
+        </ng-template>
     </div>
     <div class="message failed" *ngIf="status == 'failed'">
         this project was not created
@@ -40,8 +45,11 @@
             </span>
         </p>
         <p>
+            <span *ngIf="project.image">
+                <img src="{{url + 'get-image/' + project.image}}" *ngIf="project.image"/>
+            </span>
             <label for="lang">Image</label>
-            <input type="file" name="image" placeholder="upload image">
+            <input type="file" name="image" placeholder="upload image" (change)="fileChangeEvent($event)" >
         </p>
         <input type="submit" value="Send" [disabled]="!projectForm.form.valid">
     </form>

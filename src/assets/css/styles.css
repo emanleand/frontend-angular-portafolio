@@ -58,7 +58,8 @@ header #logo a:hover {
 /* content main*/
 
 #content {
-    min-height: 500px;
+    min-height: 600px;
+    height: auto;
     width: 75%;
     margin: 0px auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -107,18 +108,36 @@ article .about {
     border-bottom: 1px solid #ccc;
     padding-bottom: 5px;
     margin-bottom: 5px;
+    padding-left: 30px;
 }
 
 .about p {
     padding-top: 20px;
     padding-bottom: 30px;
     text-align: justify;
+    width: 70%;
+    padding-left: 30px;
 }
 
 /* form create project*/
 .container {
     padding: 50px;
     padding-top: 50px;
+}
+
+.container .image {
+    float: left;
+    width: 47%;
+}
+
+.container .image img{
+    width: 100%;
+}
+
+.container .data{
+    float: left;
+    padding-left: 30px;
+    width: 48%;
 }
 
 .container h2{
@@ -144,7 +163,7 @@ form textarea {
     padding: 5px;
 }
 
-form input[type="submit"] {
+form input[type="submit"], .button-edit, .button-delete {
     font-size: 18px;
     padding: 10px;
     display: block;
@@ -154,6 +173,24 @@ form input[type="submit"] {
     border: 1px solid rgba(53,103,164,1);
     cursor: pointer;
 }
+
+.button-edit, .button-delete {
+    width: 30%;
+    float: left;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.button-edit {
+    background: cadetblue;
+    border: none;
+}
+
+.button-delete {
+    background: tomato;
+    border: none;
+}
+
 
 form input[type="submit"]:hover {
     background:  rgba(53,103,164,0.8);
@@ -190,4 +227,46 @@ form input[disabled] {
 .failed {
     background: tomato;
     color: white;
+}
+
+/*project*/
+.project {
+    list-style: none;
+    display: block;
+    float: left;
+    width: 28%;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
+.project img {
+    width: 100%;
+}
+.project .image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.project a {
+    text-decoration: none;
+    color: black;
+}
+
+/*Detail*/
+.container .image-detail {
+    float: left;
+    width: 47%;
+}
+
+.container .image-detail img{
+    width: 100%;
+    height: 400px;
+}
+
+.confirm-delete {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
 }
